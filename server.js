@@ -35,14 +35,8 @@ app.use(cors());
 
 // res ---> GET simple response as list of useers in database
 
-app.get('/',(req,res)=>{
+app.get('/',(req,res)=>{res.send('It is working!')	})
 
-	db.select('*').from('users')
-	.then(data =>{
-			res.json(data);
-
-	})
-})
 
 // signin ROUTE as POST request 
 // resulting in either success or fail response
