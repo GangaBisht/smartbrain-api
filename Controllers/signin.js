@@ -8,12 +8,10 @@ const handleSignin = (req, res, db, bcrypt) => {
 
 	const hash = bcrypt.hashSync(password);
 
-	db('login').where({
-				email: email,
-				hash: hash}) 
+	db('login').where(	'email', '=' , email ) 
 			.returning('*')
-			.then(user =>{res.json(user[0]);})
-			.catch(err => res.status(400).json('invalid credential ') );
+			.then(user =>{res.json(user[0])})
+			.catch(err => res.status(400).json('invalid credential ') )
 }
 
 module.exports = {
