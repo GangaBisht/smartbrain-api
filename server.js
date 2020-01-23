@@ -33,9 +33,15 @@ app.use(express.json());
 app.use(cors());
 
 
-// res ---> GET simple response as list of useers in database
+// res ---> GET simple response as client ip address
 
-app.get('/',(req,res)=>{res.send('It is working!')	})
+app.get('/',(req,res)=>{
+	//const ip = req.info.remoteAddress
+    const xFF = request.headers['x-forwarded-for']
+    const ip = xFF ? xFF.split(',')[0] : req.info.remoteAddress
+
+	res.send(ip)	
+})
 
 
 // signin ROUTE as POST request 
