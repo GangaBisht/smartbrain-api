@@ -42,7 +42,7 @@ app.get('/',(req,res)=>{
     const ip = xFF ? xFF.split(',')[0] : req.info.remoteAddress
     const useragent = req.headers['user-agent']
 
-	res.send(`Ip address: ${ip} and useragent : ${useragent}`);	
+	res.send(`IP Address: ----> ${ip}   ----  and ----    USER : -----> ${useragent}`);	
 })
 
 
