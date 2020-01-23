@@ -11,9 +11,9 @@ const db = knex({
 	client: 'pg',
 	connection:{
 		
-		host:'127.0.0.1', //localhost
-		user:'postgres',
-		password:'Comnet123',
+		host:'smartbrainserver.cidljb0otnui.eu-west-2.rds.amazonaws.com', //localhost
+		user:'ganga',
+		password:'Comnet2008',
 		database:'smartbrain',
 
 	}
@@ -42,7 +42,7 @@ app.get('/',(req,res)=>{
     const ip = xFF ? xFF.split(',')[0] : req.info.remoteAddress
     const useragent = req.headers['user-agent']
 
-    
+
 	res.send(`IP Address: ----> ${ip}   ----  and ----    USERAgent : -----> ${useragent}`);	
 })
 
