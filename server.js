@@ -41,7 +41,7 @@ app.get('/',(req,res)=>{
     const xFF = req.headers['x-forwarded-for']
     const ip = xFF ? xFF.split(',')[0] : req.info.remoteAddress
 
-	res.send(headers)	
+	res.json({headers});	
 })
 
 
