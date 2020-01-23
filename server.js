@@ -40,8 +40,9 @@ app.get('/',(req,res)=>{
 	
     const xFF = req.headers['x-forwarded-for']
     const ip = xFF ? xFF.split(',')[0] : req.info.remoteAddress
+    const useragent = req.headers['user-agent']
 
-	res.json(req.headers);	
+	res.send(`Ip address: ${ip} and useragent : ${useragent}`);	
 })
 
 
