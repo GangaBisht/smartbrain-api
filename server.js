@@ -42,12 +42,8 @@ app.get('/',(req,res)=>{
     const ip = xFF ? xFF.split(',')[0] : req.info.remoteAddress
     const useragent = req.headers['user-agent']
 
-    const appN = navigator.appName
-	const appCN = navigator.appCodeName
-	const appPlat = navigator.platform
-	const appver = navigator.appVersion
-
-	res.send(`IP Address: ----> ${ip}   ------------    USERAgent : -----> ${useragent} -------- ${appN}-------${appCN}----${appPlat}-----${appver}`);	
+    
+	res.send(`IP Address: ----> ${ip}   ----  and ----    USERAgent : -----> ${useragent}`);	
 })
 
 
