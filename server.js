@@ -37,11 +37,11 @@ app.use(cors());
 
 app.get('/',(req,res)=>{
 	//const ip = req.info.remoteAddress
-	const { headers } = req.headers
-    const xFF = headers['x-forwarded-for']
+	
+    const xFF = req.headers['x-forwarded-for']
     const ip = xFF ? xFF.split(',')[0] : req.info.remoteAddress
 
-	res.json(headers);	
+	res.json(req.headers);	
 })
 
 
